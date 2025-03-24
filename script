@@ -1,0 +1,31 @@
+document.addEventListener("DOMContentLoaded", () => {
+    const searchInput = document.getElementById("search");
+    const suggestionsList = document.getElementById("suggestions");
+    const products = document.querySelectorAll(".product");
+
+    const productNames = Array.from(products).map(product => product.dataset.name);
+
+    searchInput.addEventListener("input", () => {
+        const query = searchInput.value.toLowerCase();
+        suggestionsList.innerHTML = "";
+
+        if (query) {
+            const filteredProducts = productNames.filter(name => name.toLowerCase().includes(query));
+            filteredProducts.forEach(product => {
+                const li = document.createElement("li");
+                li.textContent = product;
+                li.addEventListener("click", () => {
+                    searchInput.value = product;
+                    suggestionsList.innerHTML = "";
+                });
+                suggestionsList.appendChild(li);
+            });
+        }
+    });
+
+    document.addEventListener("click", (e) => {
+        if (e.target !== searchInput) {
+            suggestionsList.innerHTML = "";
+        }
+    });
+});

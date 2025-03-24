@@ -1,0 +1,56 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    background-color: #f8f8f8;
+    padding: 20px;
+}
+
+#search {
+    padding: 10px;
+    width: 80%;
+    max-width: 400px;
+    margin-top: 10px;
+}
+
+#suggestions {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 80%;
+    max-width: 400px;
+    margin: auto;
+    background: white;
+    border: 1px solid #ddd;
+    position: absolute;
+    z-index: 1000;
+}
+
+#suggestions li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+#suggestions li:hover {
+    background-color: #f0f0f0;
+}
+
+.product {
+    margin: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    display: inline-block;
+    width: 200px;
+}
+
+footer {
+    background-color: #222;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+}
