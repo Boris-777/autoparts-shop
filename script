@@ -1,16 +1,55 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const categorySelect = document.getElementById("category");
-    const products = document.querySelectorAll(".product");
+const products = [
+    "Фильтр масляный",
+    "Свечи зажигания",
+    "Тормозные колодки"
+];
 
-    categorySelect.addEventListener("change", function () {
-        const selectedCategory = this.value;
+function searchProducts() {
+    let input = document.getElementById("search").value.toLowerCase();
+    let items = document.getElementsByClassName("product");
 
-        products.forEach(product => {
-            if (selectedCategory === "all" || product.dataset.category === selectedCategory) {
-                product.style.display = "block";
-            } else {
-                product.style.display = "none";
-            }
+    for (let i = 0; i < items.length; i++) {
+        let name = items[i].getAttribute("data-name").toLowerCase();
+        if (name.includes(input)) {
+            items[i].style.display = "block";
+        } else {
+            items[i].style.display = "none";
+        }
+    }
+}
+
+function showSuggestions() {
+    let input = document.getElementById("search").value.toLowerCase();
+    let suggestionsBox = document.getElementById("suggestions");
+    suggestionsBox.innerHTML = "";
+
+    if (input === "") {
+        suggestionsBox.style.display = "none";
+        return;
+    }
+
+    let filtered = products.filter(product => product.toLowerCase().includes(input));
+
+    if (filtered.length > 0) {
+        suggestionsBox.style.display = "block";
+        filtered.forEach(product => {
+            let item = document.createElement("li");
+            item.textContent = product;
+            item.onclick = function () {
+                document.getElementById("search").value = product;
+                suggestionsBox.style.display = "none";
+                searchProducts();
+            };
+            suggestionsBox.appendChild(item);
         });
-    });
+    } else {
+        suggestionsBox.style.display = "none";
+    }
+}
+
+document.addEventListener("click", function (event) {
+    let suggestionsBox = document.getElementById("suggestions");
+    if (!event.target.closest(".search-container")) {
+        suggestionsBox.style.display = "none";
+    }
 });
