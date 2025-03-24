@@ -7,47 +7,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Добро пожаловать в магазин автозапчастей!</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Главная</a></li>
-                <li><a href="#">Каталог</a></li>
-                <li><a href="#">Контакты</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <label for="category">Категория:</label>
-        <select id="category">
-            <option value="all">Все</option>
-            <option value="engine">Двигатель</option>
-            <option value="brakes">Тормоза</option>
-        </select>
-
-        <div class="product">
-            <h2>Товар 1</h2>
-            <img src="images/product1.jpg" alt="Товар 1">
-            <p>Цена: 5000 ₽</p>
-            <p>В наличии</p>
+    <h1>Добро пожаловать в наш магазин!</h1>
+    <input type="text" id="search" placeholder="Поиск товаров..." onkeyup="searchProducts()">
+    
+    <div id="products">
+        <div class="product" data-name="Фильтр масляный">
+            <img src="images/filter.jpg" alt="Фильтр масляный">
+            <p>Фильтр масляный - 30₾</p>
         </div>
-
-        <div class="product">
-            <h2>Товар 2</h2>
-            <img src="images/product2.jpg" alt="Товар 2">
-            <p>Цена: 7000 ₽</p>
-            <p>В наличии</p>
+        <div class="product" data-name="Свечи зажигания">
+            <img src="images/svechi.jpg" alt="Свечи зажигания">
+            <p>Свечи зажигания - 50₾</p>
         </div>
-    </main>
-
-    <footer>
-        <p>© 2025 Магазин автозапчастей. Все права защищены.</p>
-        <div class="contacts">
-            <p>Телефон: <a href="tel:+995568774667">+995 568 77 46 67</a></p>
-            <p>Email: <a href="mailto:bengibaryan@gmail.com">bengibaryan@gmail.com</a></p>
+        <div class="product" data-name="Тормозные колодки">
+            <img src="images/kolodki.jpg" alt="Тормозные колодки">
+            <p>Тормозные колодки - 80₾</p>
         </div>
-    </footer>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
-
