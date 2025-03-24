@@ -7,24 +7,32 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Добро пожаловать в наш магазин!</h1>
-    <input type="text" id="search" placeholder="Поиск товаров..." onkeyup="searchProducts()">
-    
-    <div id="products">
-        <div class="product" data-name="Фильтр масляный">
-            <img src="images/filter.jpg" alt="Фильтр масляный">
-            <p>Фильтр масляный - 30₾</p>
-        </div>
-        <div class="product" data-name="Свечи зажигания">
-            <img src="images/svechi.jpg" alt="Свечи зажигания">
-            <p>Свечи зажигания - 50₾</p>
-        </div>
-        <div class="product" data-name="Тормозные колодки">
-            <img src="images/kolodki.jpg" alt="Тормозные колодки">
-            <p>Тормозные колодки - 80₾</p>
-        </div>
-    </div>
 
-    <script src="script.js"></script>
+<header>
+    <h1>Добро пожаловать в наш магазин!</h1>
+    <input type="text" id="search" placeholder="Поиск товаров...">
+    <ul id="suggestions"></ul>
+</header>
+
+<section id="products">
+    <div class="product" data-name="Фильтр масляный">
+        <h2>Фильтр масляный</h2>
+        <p>Цена: 30₾</p>
+    </div>
+    <div class="product" data-name="Свечи зажигания">
+        <h2>Свечи зажигания</h2>
+        <p>Цена: 50₾</p>
+    </div>
+    <div class="product" data-name="Тормозные колодки">
+        <h2>Тормозные колодки</h2>
+        <p>Цена: 80₾</p>
+    </div>
+</section>
+
+<footer>
+    <p>Контакты: +995 568 774 667 | bengibaryan@gmail.com</p>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
