@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Интернет-магазин автозапчастей</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+
+<!-- Header (Меню) -->
+<header>
+    <nav>
+        <div class="logo">
+            <h1>AutoParts</h1>
+        </div>
+        <ul>
+            <li><a href="#home">Главная</a></li>
+            <li><a href="#categories">Категории</a></li>
+            <li><a href="#contact">Контакты</a></li>
+            <li><a href="#cart">Корзина 🛒</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Главная часть -->
+<section id="home">
+    <h2>Добро пожаловать в наш магазин автозапчастей!</h2>
+    <div class="search-container">
+        <input type="text" id="search" placeholder="Поиск товаров...">
+        <ul id="suggestions"></ul>
+    </div>
+</section>
+
+<!-- Категории -->
+<section id="categories">
+    <h2>Популярные категории</h2>
+    <div class="category-list">
+        <div class="category-item product" data-name="Двигатель">
+            <img src="images/engine.jpg" alt="Двигатели">
+            <p>Двигатели</p>
+        </div>
+        <div class="category-item product" data-name="Тормозные колодки">
+            <img src="images/brake.jpg" alt="Тормоза">
+            <p>Тормоза</p>
+        </div>
+        <div class="category-item product" data-name="Фильтры масла">
+            <img src="images/filters.jpg" alt="Фильтры">
+            <p>Фильтры</p>
+        </div>
+        <div class="category-item product" data-name="Передние фары">
+            <img src="images/lights.jpg" alt="Освещение">
+            <p>Освещение</p>
+        </div>
+    </div>
+</section>
+
+<!-- Контакты -->
+<section id="contact">
+    <h2>Контактная информация</h2>
+    <p>Телефон: +995 568 774 667</p>
+    <p>Email: <a href="mailto:bengibaryan@gmail.com">bengibaryan@gmail.com</a></p>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2025 AutoParts. Все права защищены.</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
