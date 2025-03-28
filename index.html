@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AutoParts - Интернет-магазин автозапчастей с быстрым поиском и доставкой.">
+    <meta name="keywords" content="автозапчасти, двигатель, тормоза, фары, фильтры">
+    <title>AutoParts - Интернет-магазин автозапчастей</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Header (Меню) -->
+<header>
+    <nav>
+        <div class="logo">
+            <img src="images/logo.png" alt="AutoParts">
+            <h1>AutoParts</h1>
+        </div>
+        <ul>
+            <li><a href="#home">Главная</a></li>
+            <li><a href="#categories">Категории</a></li>
+            <li><a href="#contact">Контакты</a></li>
+            <li><a href="#cart">Корзина 🛒</a></li>
+        </ul>
+    </nav>
+    <div class="mobile-nav">
+        <button id="mobile-menu-toggle" aria-label="Открыть меню">&#9776;</button>
+        <nav id="mobile-menu" role="navigation">
+            <ul>
+                <li><a href="#home">Главная</a></li>
+                <li><a href="#categories">Категории</a></li>
+                <li><a href="#contact">Контакты</a></li>
+                <li><a href="#cart">Корзина 🛒</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- Главная часть -->
+<section id="home" class="parallax-section">
+    <h2>Качественные автозапчасти для вашего автомобиля</h2>
+    <p>Быстрая доставка и широкий ассортимент!</p>
+    <div class="search-container">
+        <input type="text" id="search" placeholder="Поиск запчастей..." aria-label="Поиск запчастей">
+        <ul id="suggestions" role="listbox"></ul>
+    </div>
+</section>
+
+<!-- Категории -->
+<section id="categories">
+    <h2>Популярные категории</h2>
+    <div class="category-list">
+        <a href="categories/engine.html" class="category-item" aria-label="Двигатели">
+            <img src="images/engine.jpg" alt="Двигатели" loading="lazy">
+            <p>Двигатели</p>
+        </a>
+        <a href="categories/brake.html" class="category-item" aria-label="Тормоза">
+            <img src="images/brake.jpg" alt="Тормоза" loading="lazy">
+            <p>Тормоза</p>
+        </a>
+        <a href="categories/filters.html" class="category-item" aria-label="Фильтры">
+            <img src="images/filters.jpg" alt="Фильтры" loading="lazy">
+            <p>Фильтры</p>
+        </a>
+        <a href="categories/lights.html" class="category-item" aria-label="Фары">
+            <img src="images/lights.jpg" alt="Фары" loading="lazy">
+            <p>Фары</p>
+        </a>
+    </div>
+</section>
+
+<!-- Контакты -->
+<section id="contact">
+    <h2>Свяжитесь с нами</h2>
+    <p>📞 <a href="tel:+995568774667">+995 568 774 667</a></p>
+    <p>📧 <a href="mailto:bengibaryan@gmail.com">bengibaryan@gmail.com</a></p>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2025 AutoParts. Все права защищены.</p>
+</footer>
+
+<script src="script.js" defer></script>
+
+</body>
+</html>
+
+
