@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SJ Motors - Запчасти Volkswagen</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html" style="display: flex; align-items: center; gap: inherit; text-decoration: none;">
+                    <img src="../public/images/sj-logo-3d.png" alt="SJ Motors 3D Logo" class="site-logo" />
+                    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+                        <h1 style="margin: 0; font-size: 38px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; line-height: 1; margin-left: -10px;">SJ</h1>
+                        <h1 style="margin: 0; font-size: 38px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; line-height: 1;">MOTORS</h1>
+                    </div>
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../index.html#home">Главная</a></li>
+                    <li><a href="../index.html#catalog">Каталог</a></li>
+                    <li><a href="../index.html#contact">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="header-right">
+                <button id="theme-toggle" class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="../cart.html" class="cart-icon" style="text-decoration: none; color: inherit; cursor: pointer;">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Rest of the file remains unchanged -->
+    </main>
+
+    <footer>
+        <div class="container">
+            <p data-translate="copyright">©2025 SJ-MOTORS. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay"></div>
+
+    <!-- Cart Popup -->
+    <div class="cart-popup">
+        <div class="cart-header">
+            <h2>Корзина</h2>
+            <button class="close-cart">&times;</button>
+        </div>
+        <div class="cart-items">
+            <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Итого:</span>
+                <span class="total-amount">0 ₽</span>
+            </div>
+            <button class="checkout-btn">Оформить заказ</button>
+        </div>
+    </div>
+
+    <script src="../script.js"></script>
+    <script src="../public/js/cart.js"></script>
+</body>
+</html> 
