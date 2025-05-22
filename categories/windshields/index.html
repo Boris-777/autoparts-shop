@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SJ Motors - Лобовые стекла</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .brand-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .brand-card {
+            background: var(--card-background);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+        }
+
+        .brand-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .brand-logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 15px;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            overflow: hidden;
+        }
+
+        .brand-image {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        .brand-name {
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 10px;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin: 20px;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: var(--primary-color-dark);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="../../index.html" class="logo-link">
+                    <img src="../../public/images/sj-logo-3d.png" alt="SJ Motors 3D Logo" class="site-logo" />
+                </a>
+            </div>
+            <div class="header-right">
+                <button class="search-icon">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button id="theme-toggle" class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="../../cart.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Поиск товаров..." data-translate="search">
+        </div>
+    </header>
+
+    <main>
+        <section class="brands">
+            <div class="container">
+                <a href="../index.html" class="back-button">
+                    <i class="fas fa-arrow-left"></i> <span data-translate="backToCategories">Назад к категориям</span>
+                </a>
+                <h2 data-translate="selectCarBrand">Выберите марку автомобиля</h2>
+                <div class="brand-grid">
+                    <a href="bmw.html" class="brand-card">
+                        <div class="brand-logo">
+                            <img src="../../public/images/brands/bmw.png" alt="BMW Logo" class="brand-image">
+                        </div>
+                        <div class="brand-name">BMW</div>
+                    </a>
+                    <a href="mercedes.html" class="brand-card">
+                        <div class="brand-logo">
+                            <img src="../../public/images/brands/mercedes.png" alt="Mercedes-Benz Logo" class="brand-image">
+                        </div>
+                        <div class="brand-name">Mercedes-Benz</div>
+                    </a>
+                    <a href="volkswagen.html" class="brand-card">
+                        <div class="brand-logo">
+                            <img src="../../public/images/brands/volkswagen.png" alt="Volkswagen Logo" class="brand-image">
+                        </div>
+                        <div class="brand-name">Volkswagen</div>
+                    </a>
+                    <a href="toyota.html" class="brand-card">
+                        <div class="brand-logo">
+                            <img src="../../public/images/brands/toyota.png" alt="TOYOTA Logo" class="brand-image">
+                        </div>
+                        <div class="brand-name">TOYOTA</div>
+                    </a>
+                    <a href="nissan.html" class="brand-card">
+                        <div class="brand-logo">
+                            <img src="../../public/images/brands/nissan.png" alt="NISSAN Logo" class="brand-image">
+                        </div>
+                        <div class="brand-name">NISSAN</div>
+                    </a>
+                    <a href="opel.html" class="brand-card">
+                        <div class="brand-logo">
+                            <img src="../../public/images/brands/opel.png" alt="Opel Logo" class="brand-image">
+                        </div>
+                        <div class="brand-name">Opel</div>
+                    </a>
+                    <a href="honda.html" class="brand-card">
+                        <div class="brand-logo">
+                            <img src="../../public/images/brands/honda.png" alt="HONDA Logo" class="brand-image">
+                        </div>
+                        <div class="brand-name">HONDA</div>
+                    </a>
+                    <a href="lexus.html" class="brand-card">
+                        <div class="brand-logo">
+                            <img src="../../public/images/brands/lexus.png" alt="LEXUS Logo" class="brand-image">
+                        </div>
+                        <div class="brand-name">LEXUS</div>
+                    </a>
+                    <a href="hyundai.html" class="brand-card">
+                        <div class="brand-logo">
+                            <img src="../../public/images/brands/hyundai.png" alt="HYUNDAI Logo" class="brand-image">
+                        </div>
+                        <div class="brand-name">HYUNDAI</div>
+                    </a>
+                    <a href="audi.html" class="brand-card">
+                        <div class="brand-logo">
+                            <img src="../../public/images/brands/audi.png" alt="Audi Logo" class="brand-image">
+                        </div>
+                        <div class="brand-name">Audi</div>
+                    </a>
+                    <a href="land-rover.html" class="brand-card">
+                        <div class="brand-logo">
+                            <img src="../../public/images/brands/land-rover.png" alt="Land Rover Logo" class="brand-image">
+                        </div>
+                        <div class="brand-name">Land Rover</div>
+                    </a>
+                    <a href="man.html" class="brand-card">
+                        <div class="brand-logo">
+                            <img src="../../public/images/brands/man.png" alt="MAN Logo" class="brand-image">
+                        </div>
+                        <div class="brand-name">MAN</div>
+                    </a>
+                    <a href="mazda.html" class="brand-card">
+                        <div class="brand-logo">
+                            <img src="../../public/images/brands/mazda.png" alt="Mazda Logo" class="brand-image">
+                        </div>
+                        <div class="brand-name">Mazda</div>
+                    </a>
+                    <a href="mini.html" class="brand-card">
+                        <div class="brand-logo">
+                            <img src="../../public/images/brands/mini.png" alt="MINI Logo" class="brand-image">
+                        </div>
+                        <div class="brand-name">MINI</div>
+                    </a>
+                    <a href="mitsubishi.html" class="brand-card">
+                        <div class="brand-logo">
+                            <img src="../../public/images/brands/mitsubishi.png" alt="Mitsubishi Logo" class="brand-image">
+                        </div>
+                        <div class="brand-name">Mitsubishi</div>
+                    </a>
+                    <a href="porsche.html" class="brand-card">
+                        <div class="brand-logo">
+                            <img src="../../public/images/brands/porsche.png" alt="Porsche Logo" class="brand-image">
+                        </div>
+                        <div class="brand-name">Porsche</div>
+                    </a>
+                    <a href="renault.html" class="brand-card">
+                        <div class="brand-logo">
+                            <img src="../../public/images/brands/renault.png" alt="Renault Logo" class="brand-image">
+                        </div>
+                        <div class="brand-name">Renault</div>
+                    </a>
+                    <a href="skoda.html" class="brand-card">
+                        <div class="brand-logo">
+                            <img src="../../public/images/brands/skoda.png" alt="Skoda Logo" class="brand-image">
+                        </div>
+                        <div class="brand-name">Skoda</div>
+                    </a>
+                    <a href="subaru.html" class="brand-card">
+                        <div class="brand-logo">
+                            <img src="../../public/images/brands/subaru.png" alt="Subaru Logo" class="brand-image">
+                        </div>
+                        <div class="brand-name">Subaru</div>
+                    </a>
+                    <a href="suzuki.html" class="brand-card">
+                        <div class="brand-logo">
+                            <img src="../../public/images/brands/suzuki.png" alt="Suzuki Logo" class="brand-image">
+                        </div>
+                        <div class="brand-name">Suzuki</div>
+                    </a>
+                    <a href="tesla.html" class="brand-card">
+                        <div class="brand-logo">
+                            <img src="../../public/images/brands/tesla.png" alt="Tesla Logo" class="brand-image">
+                        </div>
+                        <div class="brand-name">Tesla</div>
+                    </a>
+                    <a href="volvo.html" class="brand-card">
+                        <div class="brand-logo">
+                            <img src="../../public/images/brands/volvo.png" alt="Volvo Logo" class="brand-image">
+                        </div>
+                        <div class="brand-name">Volvo</div>
+                    </a>
+                    <a href="chevrolet.html" class="brand-card">
+                        <div class="brand-logo">
+                            <img src="../../public/images/brands/chevrolet.png" alt="Chevrolet Logo" class="brand-image">
+                        </div>
+                        <div class="brand-name">Chevrolet</div>
+                    </a>
+                    <a href="dodge.html" class="brand-card">
+                        <div class="brand-logo">
+                            <img src="../../public/images/brands/dodge.png" alt="Dodge Logo" class="brand-image">
+                        </div>
+                        <div class="brand-name">Dodge</div>
+                    </a>
+                    <a href="fiat.html" class="brand-card">
+                        <div class="brand-logo">
+                            <img src="../../public/images/brands/fiat.png" alt="Fiat Logo" class="brand-image">
+                        </div>
+                        <div class="brand-name">Fiat</div>
+                    </a>
+                    <a href="ford.html" class="brand-card">
+                        <div class="brand-logo">
+                            <img src="../../public/images/brands/ford.png" alt="Ford Logo" class="brand-image">
+                        </div>
+                        <div class="brand-name">Ford</div>
+                    </a>
+                    <a href="infiniti.html" class="brand-card">
+                        <div class="brand-logo">
+                            <img src="../../public/images/brands/infiniti.png" alt="Infiniti Logo" class="brand-image">
+                        </div>
+                        <div class="brand-name">Infiniti</div>
+                    </a>
+                    <a href="iveco.html" class="brand-card">
+                        <div class="brand-logo">
+                            <img src="../../public/images/brands/iveco.png" alt="Iveco Logo" class="brand-image">
+                        </div>
+                        <div class="brand-name">Iveco</div>
+                    </a>
+                    <a href="jeep.html" class="brand-card">
+                        <div class="brand-logo">
+                            <img src="../../public/images/brands/jeep.png" alt="Jeep Logo" class="brand-image">
+                        </div>
+                        <div class="brand-name">Jeep</div>
+                    </a>
+                    <a href="kia.html" class="brand-card">
+                        <div class="brand-logo">
+                            <img src="../../public/images/brands/kia.png" alt="Kia Logo" class="brand-image">
+                        </div>
+                        <div class="brand-name">Kia</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p data-translate="copyright">©2025 SJ-MOTORS. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../../script.js"></script>
+</body>
+</html> 

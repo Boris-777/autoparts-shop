@@ -1,0 +1,28 @@
+User-agent: *
+Allow: /
+Sitemap: https://sjmotors.ge/sitemap.xml
+
+# Allow search engines to index main content
+Allow: /index.html
+Allow: /style.css
+Allow: /script.js
+Allow: /images/
+Allow: /categories/
+Allow: /products/
+Allow: /brands/
+
+# Crawl-delay for all bots
+Crawl-delay: 10
+
+# Specific rules for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 5
+
+User-agent: Yandex
+Allow: /
+Crawl-delay: 5
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 5 

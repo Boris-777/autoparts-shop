@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SJ Motors - Интернет-магазин автозапчастей в Нинцминда. Широкий ассортимент запчастей для всех марок автомобилей. Быстрая доставка и качественное обслуживание.">
+    <meta name="keywords" content="SJ Motors, автозапчасти, Ninotsminda, автомобильные запчасти, моторное масло, фильтры, тормозные колодки, автосервис">
+    <meta name="author" content="SJ Motors">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="SJ Motors - Интернет-магазин автозапчастей">
+    <meta property="og:description" content="Широкий ассортимент автозапчастей в Нинцминда. Качественные запчасти для всех марок автомобилей.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sjmotors.ge">
+    <meta property="og:image" content="images/logo.jpg">
+    <title>SJ Motors - Интернет-магазин автозапчастей в Нинцминда</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <img src="public/images/sj-logo-3d.png" alt="SJ Motors 3D Logo" class="site-logo" />
+                </a>
+            </div>
+            <div class="search-container">
+                <input type="text" id="search" placeholder="Поиск товаров..." data-translate="search">
+                <i class="fas fa-search"></i>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home" data-translate="home">Главная</a></li>
+                    <li><a href="#catalog" data-translate="catalog">Каталог</a></li>
+                    <li><a href="#contact" data-translate="contact">Контакты</a></li>
+                </ul>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+            <div class="header-right">
+                <div class="language-switcher">
+                    <button class="language-btn">
+                        <i class="fas fa-globe"></i>
+                        <span class="current-lang">RU</span>
+                    </button>
+                    <div class="language-dropdown">
+                        <a href="#" data-lang="ru">Русский</a>
+                        <a href="#" data-lang="en">English</a>
+                        <a href="#" data-lang="ka">ქართული</a>
+                        <a href="#" data-lang="hy">Հայերեն</a>
+                    </div>
+                </div>
+                <button id="theme-toggle" class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h2 data-translate="qualityParts">Качественные автозапчасти</h2>
+                <p data-translate="wideRange">Широкий ассортимент запчастей для всех марок автомобилей</p>
+                <a href="#catalog" class="btn" data-translate="goToCatalog">Перейти в каталог</a>
+            </div>
+        </section>
+
+        <section id="categories" class="categories">
+            <div class="container">
+                <h2 data-translate="productCategories">Категории товаров</h2>
+                <div class="category-grid">
+                    <div class="category-card">
+                        <a href="categories/oils/index.html">
+                            <i class="fas fa-oil-can"></i>
+                            <h3 data-translate="oils">Масла и жидкости</h3>
+                        </a>
+                    </div>
+                    
+                    <div class="category-card">
+                        <a href="categories/brands/index.html">
+                            <i class="fas fa-car"></i>
+                            <h3 data-translate="carBrands">Автомобили</h3>
+                        </a>
+                    </div>
+                    <div class="category-card">
+                        <a href="categories/windshields/index.html">
+                            <i class="fas fa-car-side"></i>
+                            <h3 data-translate="windshields">Лобовые стёкла</h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="catalog" class="catalog">
+            <div class="container">
+                <h2 data-translate="productCatalog">Каталог товаров</h2>
+                <div class="product-grid">
+                    <div class="product-card" data-product-id="motor-oil">
+                        <script type="application/ld+json">
+                        {
+                            "@context": "https://schema.org",
+                            "@type": "Product",
+                            "name": "Моторное масло 5W-30",
+                            "description": "Высококачественное синтетическое моторное масло 5W-30 для всех типов двигателей",
+                            "brand": {
+                                "@type": "Brand",
+                                "name": "SJ Motors"
+                            },
+                            "offers": {
+                                "@type": "Offer",
+                                "price": "2500",
+                                "priceCurrency": "RUB",
+                                "availability": "https://schema.org/InStock",
+                                "seller": {
+                                    "@type": "Organization",
+                                    "name": "SJ Motors"
+                                }
+                            }
+                        }
+                        </script>
+                        <img src="images/oil.jpg" alt="Моторное масло">
+                        <h3 data-translate="motorOil">Моторное масло 5W-30</h3>
+                        <p class="price">2,500 ₽</p>
+                        <button class="add-to-cart" data-translate="addToCart">В корзину</button>
+                    </div>
+                    <div class="product-card" data-product-id="filter-set">
+                        <script type="application/ld+json">
+                        {
+                            "@context": "https://schema.org",
+                            "@type": "Product",
+                            "name": "Комплект фильтров",
+                            "description": "Полный комплект фильтров для автомобиля: масляный, воздушный и салонный фильтры",
+                            "brand": {
+                                "@type": "Brand",
+                                "name": "SJ Motors"
+                            },
+                            "offers": {
+                                "@type": "Offer",
+                                "price": "1800",
+                                "priceCurrency": "RUB",
+                                "availability": "https://schema.org/InStock",
+                                "seller": {
+                                    "@type": "Organization",
+                                    "name": "SJ Motors"
+                                }
+                            }
+                        }
+                        </script>
+                        <img src="images/filters.jpg" alt="Фильтры">
+                        <h3 data-translate="filterSet">Комплект фильтров</h3>
+                        <p class="price">1,800 ₽</p>
+                        <button class="add-to-cart" data-translate="addToCart">В корзину</button>
+                    </div>
+                    <div class="product-card" data-product-id="brake-pads">
+                        <script type="application/ld+json">
+                        {
+                            "@context": "https://schema.org",
+                            "@type": "Product",
+                            "name": "Тормозные колодки",
+                            "description": "Высококачественные тормозные колодки для надежного торможения",
+                            "brand": {
+                                "@type": "Brand",
+                                "name": "SJ Motors"
+                            },
+                            "offers": {
+                                "@type": "Offer",
+                                "price": "3200",
+                                "priceCurrency": "RUB",
+                                "availability": "https://schema.org/InStock",
+                                "seller": {
+                                    "@type": "Organization",
+                                    "name": "SJ Motors"
+                                }
+                            }
+                        }
+                        </script>
+                        <img src="images/brake-pads.jpg" alt="Тормозные колодки">
+                        <h3 data-translate="brakePads">Тормозные колодки</h3>
+                        <p class="price">3,200 ₽</p>
+                        <button class="add-to-cart" data-translate="addToCart">В корзину</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 data-translate="contact">Контакты</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3 data-translate="address">Адрес</h3>
+                        <p><a href="https://www.google.com/maps?q=7H7V+RV7, str. Freedom, Ninotsminda" target="_blank" class="address">7H7V+RV7, str. Freedom, Ninotsminda</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <h3 data-translate="phone">Телефон</h3>
+                        <p><a href="tel:+995571444407">+995 571 444 407</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <h3 data-translate="email">Email</h3>
+                        <p><a href="mailto:bengibaryan@gmail.com">bengibaryan@gmail.com</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-instagram"></i>
+                        <h3>Instagram</h3>
+                        <p><a href="https://www.instagram.com/_s_j_motors_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">@_s_j_motors_</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p data-translate="copyright">©2025 SJ-MOTORS. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content cart-modal-content">
+            <span class="close-modal close-cart">&times;</span>
+            <h3 data-translate="yourCart">Your Cart</h3>
+            <div class="cart-items"></div>
+            <div class="cart-total">
+                <span data-translate="total">Total:</span>
+                <span class="total-amount">0 ₽</span>
+            </div>
+            <button class="btn checkout-btn" data-translate="checkout">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Cart Warning Modal -->
+    <div id="cartWarningModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <i class="fas fa-exclamation-circle warning-icon"></i>
+            <h3 data-translate="itemInCart">Item already in cart</h3>
+            <p data-translate="itemInCartMessage">This item is already in your cart.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AutoPartsStore",
+        "name": "SJ Motors",
+        "description": "Интернет-магазин автозапчастей в Нинцминда",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "str. Freedom",
+            "addressLocality": "Ninotsminda",
+            "addressCountry": "Georgia"
+        },
+        "telephone": "+995571444407",
+        "email": "bengibaryan@gmail.com",
+        "url": "https://sjmotors.ge",
+        "priceRange": "₽",
+        "openingHours": "Mo-Su 09:00-18:00",
+        "image": "images/logo.jpg",
+        "sameAs": [
+            "https://www.facebook.com/sjmotors",
+            "https://www.instagram.com/sjmotors"
+        ]
+    }
+    </script>
+</body>
+</html>

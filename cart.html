@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate="cart">Корзина - SJ-MOTORS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .cart-container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .back-to-catalog {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .back-to-catalog:hover {
+            background-color: var(--primary-color-dark);
+        }
+
+        .cart-items {
+            background: var(--card-background);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            transition: background-color 0.3s;
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        .cart-item:hover {
+            background-color: var(--hover-color);
+        }
+
+        .item-info {
+            flex-grow: 1;
+        }
+
+        .item-name {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .item-quantity {
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .quantity-btn {
+            background: var(--secondary-color);
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--text-color);
+            transition: background-color 0.3s;
+        }
+
+        .quantity-btn:hover {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .remove-btn {
+            background: none;
+            border: none;
+            color: #ff4444;
+            cursor: pointer;
+            padding: 0.5rem;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .remove-btn:hover {
+            color: #cc0000;
+        }
+
+        .cart-summary {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: var(--card-background);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .summary-row.total {
+            font-size: 1.3rem;
+            font-weight: 600;
+            border-top: 2px solid var(--border-color);
+            padding-top: 1rem;
+            margin-top: 1rem;
+        }
+
+        .checkout-btn {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.2rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 1rem;
+        }
+
+        .checkout-btn:hover {
+            background-color: var(--accent-color-dark);
+        }
+
+        .empty-cart {
+            text-align: center;
+            padding: 3rem;
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            background: var(--card-background);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .empty-cart i {
+            font-size: 3rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <img src="public/images/sj-logo-3d.png" alt="SJ Motors 3D Logo" class="site-logo" />
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html#home" data-translate="home">Главная</a></li>
+                    <li><a href="index.html#catalog" data-translate="catalog">Каталог</a></li>
+                    <li><a href="index.html#contact" data-translate="contact">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="header-right">
+                <div class="language-switcher">
+                    <button class="language-btn">
+                        <i class="fas fa-globe"></i>
+                        <span class="current-lang">RU</span>
+                    </button>
+                    <div class="language-dropdown">
+                        <a href="#" data-lang="ru">Русский</a>
+                        <a href="#" data-lang="en">English</a>
+                        <a href="#" data-lang="ka">ქართული</a>
+                        <a href="#" data-lang="hy">Հայերեն</a>
+                    </div>
+                </div>
+                <button id="theme-toggle" class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="cart-container">
+            <div class="cart-header">
+                <h1 data-translate="cart">Корзина</h1>
+                <a href="index.html#catalog" class="back-to-catalog">
+                    <i class="fas fa-arrow-left"></i>
+                    <span data-translate="backToCatalog">Вернуться в каталог</span>
+                </a>
+            </div>
+            <div id="cart-items">
+                <!-- Cart items will be inserted here -->
+            </div>
+            <div id="cart-summary" class="cart-summary" style="display: none;">
+                <div class="summary-row">
+                    <span data-translate="totalItems">Количество товаров:</span>
+                    <span id="total-quantity">0</span>
+                </div>
+                <div class="summary-row total">
+                    <span data-translate="total">Итого:</span>
+                    <span id="total-price">0 ₽</span>
+                </div>
+                <button class="checkout-btn" data-translate="checkout">Оформить заказ</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p data-translate="copyright">©2025 SJ-MOTORS. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartSummary = document.getElementById('cart-summary');
+            const totalQuantity = document.getElementById('total-quantity');
+            const totalPrice = document.getElementById('total-price');
+            
+            // Add cart translations to the translations object
+            const cartTranslations = {
+                ru: {
+                    cart: 'Корзина',
+                    backToCatalog: 'Вернуться в каталог',
+                    totalItems: 'Количество товаров:',
+                    total: 'Итого:',
+                    checkout: 'Оформить заказ',
+                    emptyCart: 'Ваша корзина пуста',
+                    checkoutComingSoon: 'Функция оформления заказа будет доступна в ближайшее время!',
+                    quantity: 'Количество:',
+                    remove: 'Удалить'
+                },
+                en: {
+                    cart: 'Cart',
+                    backToCatalog: 'Back to catalog',
+                    totalItems: 'Total items:',
+                    total: 'Total:',
+                    checkout: 'Checkout',
+                    emptyCart: 'Your cart is empty',
+                    checkoutComingSoon: 'Checkout functionality will be available soon!',
+                    quantity: 'Quantity:',
+                    remove: 'Remove'
+                },
+                ka: {
+                    cart: 'კალათა',
+                    backToCatalog: 'კატალოგში დაბრუნება',
+                    totalItems: 'პროდუქციის რაოდენობა:',
+                    total: 'ჯამი:',
+                    checkout: 'შეკვეთის გაფორმება',
+                    emptyCart: 'თქვენი კალათა ცარიელია',
+                    checkoutComingSoon: 'შეკვეთის გაფორმების ფუნქციონალი მალე ხელმისაწვდომი იქნება!',
+                    quantity: 'რაოდენობა:',
+                    remove: 'წაშლა'
+                },
+                hy: {
+                    cart: 'Զամբյուղ',
+                    backToCatalog: 'Վերադառնալ կատալոգ',
+                    totalItems: 'Ապրանքների քանակը:',
+                    total: 'Ընդհանուր:',
+                    checkout: 'Պատվիրել',
+                    emptyCart: 'Ձեր զամբյուղը դատարկ է',
+                    checkoutComingSoon: 'Պատվերի գործառույթը շուտով հասանելի կլինի!',
+                    quantity: 'Քանակ:',
+                    remove: 'Ջնջել'
+                }
+            };
+
+            // Merge cart translations with existing translations
+            if (window.translations) {
+                Object.keys(cartTranslations).forEach(lang => {
+                    if (window.translations[lang]) {
+                        window.translations[lang] = {
+                            ...window.translations[lang],
+                            ...cartTranslations[lang]
+                        };
+                    }
+                });
+            }
+            
+            function updateCart() {
+                // Get cart items from localStorage
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                
+                if (cart.length === 0) {
+                    cartItemsContainer.innerHTML = `
+                        <div class="empty-cart">
+                            <i class="fas fa-shopping-cart"></i>
+                            <p data-translate="emptyCart">Ваша корзина пуста</p>
+                        </div>
+                    `;
+                    cartSummary.style.display = 'none';
+                } else {
+                    // Display cart items
+                    cartItemsContainer.innerHTML = cart.map(item => `
+                        <div class="cart-item" data-id="${item.id}">
+                            <div class="item-info">
+                                <div class="item-name">${item.name}</div>
+                                <div class="item-quantity">
+                                    <span data-translate="quantity">Количество:</span>
+                                    <div class="quantity-controls">
+                                        <button class="quantity-btn" onclick="updateQuantity('${item.id}', -1)">-</button>
+                                        <span>${item.quantity}</span>
+                                        <button class="quantity-btn" onclick="updateQuantity('${item.id}', 1)">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="remove-btn" onclick="removeItem('${item.id}')" title="Remove item">
+                                <i class="fas fa-trash"></i>
+                                <span class="sr-only" data-translate="remove">Удалить</span>
+                            </button>
+                        </div>
+                    `).join('');
+
+                    // Update summary
+                    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+                    totalQuantity.textContent = totalItems;
+                    totalPrice.textContent = `${totalItems * 2500} ₽`; // Assuming each item costs 2500 ₽
+                    cartSummary.style.display = 'block';
+                }
+
+                // Update translations after cart content is updated
+                if (window.updateContent) {
+                    const currentLang = localStorage.getItem('language') || 'ru';
+                    window.updateContent(currentLang);
+                }
+            }
+
+            // Initialize cart
+            updateCart();
+
+            // Make functions globally available
+            window.updateQuantity = function(itemId, change) {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const itemIndex = cart.findIndex(item => item.id === itemId);
+                
+                if (itemIndex !== -1) {
+                    cart[itemIndex].quantity += change;
+                    
+                    // Remove item if quantity is 0 or less
+                    if (cart[itemIndex].quantity <= 0) {
+                        cart.splice(itemIndex, 1);
+                    }
+                    
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    updateCart();
+                }
+            };
+
+            window.removeItem = function(itemId) {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const updatedCart = cart.filter(item => item.id !== itemId);
+                localStorage.setItem('cart', JSON.stringify(updatedCart));
+                updateCart();
+            };
+
+            // Add checkout button functionality
+            document.querySelector('.checkout-btn').addEventListener('click', () => {
+                const currentLang = localStorage.getItem('language') || 'ru';
+                const message = cartTranslations[currentLang].checkoutComingSoon;
+                alert(message);
+            });
+
+            // Initialize language switcher
+            const languageSwitcher = document.querySelector('.language-switcher');
+            const languageBtn = document.querySelector('.language-btn');
+            const languageDropdown = document.querySelector('.language-dropdown');
+            const currentLang = document.querySelector('.current-lang');
+
+            if (languageSwitcher && languageBtn && languageDropdown) {
+                // Load saved language preference
+                const savedLang = localStorage.getItem('language') || 'ru';
+                if (currentLang) {
+                    currentLang.textContent = savedLang.toUpperCase();
+                }
+                if (window.updateContent) {
+                    window.updateContent(savedLang);
+                }
+
+                // Handle language button click
+                languageBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    languageDropdown.style.display = 
+                        languageDropdown.style.display === 'block' ? 'none' : 'block';
+                });
+
+                // Handle language selection
+                languageDropdown.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const lang = link.getAttribute('data-lang');
+                        if (currentLang) {
+                            currentLang.textContent = lang.toUpperCase();
+                        }
+                        if (window.updateContent) {
+                            window.updateContent(lang);
+                        }
+                        localStorage.setItem('language', lang);
+                        languageDropdown.style.display = 'none';
+                    });
+                });
+
+                // Close dropdown when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (!e.target.closest('.language-switcher')) {
+                        languageDropdown.style.display = 'none';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html> 
